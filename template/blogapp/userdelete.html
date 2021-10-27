@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
-    {%for ob in user%}
-   {{ob.username}} 
-   <a href ="{%url 'blogapp:userdetails' ob.pk%}"> details</a><br>
-    {%endfor%}
-    <a href = "{%url 'blogapp:home' %}"><p><b>Home</b></p></a>
+    <form action="" method="post">
+        {%csrf_token%}
+    Do you want to delete {{user}} ?
+    <input type="submit" value="Delete">
+</form>
 </body>
 </html>

@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    {%for ob in user%}
-   {{ob.username}} 
-   <a href ="{%url 'blogapp:userdetails' ob.pk%}"> details</a><br>
-    {%endfor%}
-    <a href = "{%url 'blogapp:home' %}"><p><b>Home</b></p></a>
+    Name :{{user.username}}<br>
+    Admin :{{user.is_superuser}}<br>
+    <a href = "{%url 'blogapp:userupdate' user.pk%}">Update</a>
+    <a href = "{%url 'blogapp:userdelete' user.pk%}">Delete</a><br>
+    <a href = "{% url 'blogapp:userlist'%}">Back</a>
+
 </body>
 </html>

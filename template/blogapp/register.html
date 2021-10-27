@@ -1,5 +1,5 @@
 {%load static%}
-{%csrf_token%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form action="{% url 'blogapp:register' %}" method="post">
+        {%csrf_token%}
 {{form.as_p}}
-    <input type="text"> email field
-    <input type="text"> password
+
+    <input type="submit" value = 'Register'> 
+    <b>Have an acccount ?</b> <a href ="{%url 'blogapp:login' %}" >Sign In</a>
+
     </form>
 
 </body>
